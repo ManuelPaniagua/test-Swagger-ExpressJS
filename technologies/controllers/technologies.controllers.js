@@ -29,6 +29,10 @@ export const getDate = (req, res) => {
 
 export const addTechnologie = (req, res) => {
     try {
+        const { nickname } = req.headers;
+        if (!nickname) {
+            return res.status(400).json({ error: 'Nickname is required' });
+        }
         const resp = addItem(req.body)
         res.status(200).json(resp)
     } catch (err) {
