@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-
 import technologiesRoutes from './technologies/routes/technologies.routes.js'
 
 const app   = express()
@@ -17,3 +16,5 @@ app.use('/technologies', technologiesRoutes)
 if(process.env.NODE_ENV !== "test") {
     app.listen(port, () => console.log(`[Server]: Server is running at http://localhost:${port}`))
 }
+
+export default app;

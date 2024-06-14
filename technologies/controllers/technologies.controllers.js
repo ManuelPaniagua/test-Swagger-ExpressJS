@@ -24,7 +24,7 @@ export const getDate = (req, res) => {
     } else {
         response.datetime = now.toISOString();
     }
-    res.json(response);
+    res.status(200).json(response);
 };
 
 export const addTechnologie = (req, res) => {
